@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <%- include('partials/header') %>
+<!-- Section lain untuk user yang login -->
+  <% if (user) { %>
+    <section class="hero" id="home">
+      <div class="mask-container">
+        <main class="content">
+          <h1>Mari Nikmati Secangkir <span>Kopi</span></h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, enim.</p>
+        </main>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>Tentang Kami</h2>
+      <p>Informasi tentang kami.</p>
+    </section>
+    <section id="menu">
+      <h2>Menu</h2>
+      <p>Daftar menu kami.</p>
+    </section>
+    <section id="contact">
+      <h2>Kontak</h2>
+      <p>Hubungi kami.</p>
+    </section>
+
+
+    <!-- Konten untuk user yang tidak login -->
+  <% } else { %>
+    <section id="restricted">
+      <h2>Anda harus login untuk melihat konten ini</h2>
+      <p>Silakan <a href="/login">login</a> terlebih dahulu.</p>
+    </section>
+  <% } %>
+
+  <%- include('partials/footer') %>
+
+</body>
+
+</html>

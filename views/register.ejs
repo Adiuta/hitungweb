@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="login-box">
+        <%- include('partials/nameweb') %>
+        <h2>Daftar</h2>
+        <form action="/register" method="post">
+            <div class="textbox">
+                <input type="text" placeholder="Nama" name="name" required>
+            </div>
+            <div class="textbox">
+                <input type="email" placeholder="Email" name="email" required>
+            </div>
+            <div class="textbox">
+                <input type="password" placeholder="Password" name="password" id="passwordInput" required>
+                <a href="#" id="togglePassword" onclick="togglePasswordVisibility()">
+                  <i class="fas fa-eye" id="eyeIcon"></i>
+                </a>
+            </div>
+            <input type="submit" class="btn" value="Register">
+        </form>
+        <p>Sudah Memiliki Akun? <a href="/login">Masuk Disini</a></p>
+    </div>
+    <script>
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('passwordInput');
+            const eyeIcon = document.getElementById('eyeIcon');
+
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeIcon.classList.remove('fa-eye');
+                eyeIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                eyeIcon.classList.remove('fa-eye-slash');
+                eyeIcon.classList.add('fa-eye');
+            }
+        }
+    </script>
+
+</body>
+</html>

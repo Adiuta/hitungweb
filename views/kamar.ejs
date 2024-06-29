@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Konstruksi Calc</title>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap" rel="stylesheet" />
+  <link rel="shortcut icon" href="assets/favicon.png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Navbar Start -->
+  <nav class="navbar">
+    <a href="#" class="navbar-logo">Hitung <span>Material</span> .
+    <div class="navbar-nav">
+      <a href="index.html">Home</a>
+      <a href="component/about.html">Tentang</a>
+      <a href="component/contcact.html">Kontak</a>
+    </div>
+
+    <div class="dark-light">
+      <i class="icon-sun" data-feather="sun"></i>
+      <i class="icon-moon" data-feather="moon"></i>
+    </div>
+
+    <div class="navbar-extra">
+      <a href="#" id="sidebar"><i data-feather="menu"></i></a>
+    </div>
+  </nav>
+  <!-- Navbar End -->
+  <!-- Konten start -->
+  <content class="note" id="pesan">
+    <h2>Perhitungan Kebutuhan Material dan Pekerja</h2>
+    <p>Kalkulator online untuk menghitung jumlah dan bahan dan Pekerja yang dibutuhkan.</p>
+  </content>
+  <div class="PilihanPekerjaan">
+    <form>
+      <label for="JenisPekerjaan">Pilih Jenis Pekerjaan:</label>
+      <select id="mainDropdown" onchange="updateDropdown()">
+        <option value="Tanah">Pekerjaan Tanah</option>
+        <option value="Pondasi">Pekerjaan Pondasi</option>
+        <option value="Beton">Pekerjaan Beton</option>
+        <option value="Dinding">Pekerjaan Dinding</option>
+        <option value="Plesteran">Pekerjaan Plesteran</option>
+        <option value="PintuJendela">Pekerjaan Pintu dan Jendela</option>
+        <option value="AksesorisPintuJendela">Pekerjaan Aksesoris Pintu dan Jendela</option>
+        <option value="Keramik">Pekerjaan Penutup Lantai dan Dinding</option>
+        <option value="RangkaAtap">Pekerjaan Rangka Atap</option>
+        <option value="Atap">Pekerjaan Penutup Atap</option>
+        <option value="Plafond">Pekerjaan Plafond</option>
+        <option value="Pengecatan">Pekerjaan Pengecatan</option>
+        <option value="Listrik">Pekerjaan Listrik</option>
+        <option value="StyleBali">Pekerjaan Style Bali</option>
+        <option value="Pipa">Pekerjaan Pipa Dalam Gedung</option>
+      </select>
+
+      <label for="ItemPekerjaan">Pilih Sub Pekerjaan:</label>
+      <select id="subDropdown">
+        <option value=" ">Pilih sub pekerjaan</option>
+      </select>
+
+      <label for="volume">Masukkan Volume Pekerjaan:</label>
+      <input type="number" id="volume" step="0.01" required />
+
+      <!-- Perintah untuk menghitung -->
+      <button type="button" id="hitungButton" onclick="calculateRatio()">Hitung</button>
+    </form>
+    <div id="hasil"></div>
+  </div>
+
+  <content class="note" id="pesan">
+    <h2>PERHATIAN!</h2>
+    <p>Website ini masih dalam pengembangan, Harap maklum jika ada beberapa pekerjaan belum tersedia</p>
+    <p>Hubungi admin jika terdapat kendala atau kekeliruan dalam website ini</p>
+    <p>Kritik dan saran sangat diperlukan dalam membangun website ini.</p>
+  </content>
+
+  <!-- Konten end -->
+  <!-- Footer start -->
+  <footer>
+    <div class="credit">
+      <p>&copy; 2023 <em>HitungMaterial.</em> Created by adi putra.</p>
+    </div>    
+  </footer>
+  <!-- Footer end -->
+  <!-- Javascript -->
+  <script src="js/hitung.js"></script>
+  <script src="js/pilihan.js"></script>
+  <script>
+    // Fungsi untuk mengupdate subDropdown berdasarkan mainDropdown
+    function updateDropdown() {
+      var mainDropdown = document.getElementById("mainDropdown");
+      var selectedOption = mainDropdown.options[mainDropdown.selectedIndex].value;
+  
+      // Memanggil fungsi dari subDropdown.js
+      updateSubDropdown(selectedOption);
+    }
+  </script>
+  <script src="js/menu.js"></script>
+  <script>
+    // Menggantikan ikon menggunakan Feather Icons
+    feather.replace();
+  </script>
+</body>
+</html>

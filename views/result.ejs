@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Perhitungan</title>
+</head>
+<body>
+    <h1>Hasil Perhitungan</h1>
+    <p>Pekerjaan: <%= pekerjaan %></p>
+    <p>Volume: <%= volume %> m3</p>
+    <h2>Rincian Biaya:</h2>
+    <ul>
+        <% hasilPerhitungan.forEach(hasil => { %>
+            <li>
+                <%= hasil.nama %>:
+                <%= hasil.kebutuhan %> <%= hasil.satuan %> x Rp<%= hasil.harga.toLocaleString() %>
+            </li>
+        <% }); %>
+    </ul>
+    <h3>Total Harga: Rp<%= totalHarga.toLocaleString() %></h3>
+    <a href="/">Kembali</a>
+</body>
+</html>

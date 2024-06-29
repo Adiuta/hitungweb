@@ -1,0 +1,7 @@
+{
+    "editor.fontSize": 18,
+    "editor.fontFamily": "monospace",
+    "cursor.aipreview.enabled": true,
+    "editor.accessibilityPageSize": 12,
+    "html-to-css-autocompletion.autocompletionFilesScope": "workspace"
+}
